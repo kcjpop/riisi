@@ -1,0 +1,20 @@
+{
+  "presets": [
+    ["es2015", {"modules": false}],
+    "stage-0"
+  ],
+  "plugins": [
+  ],
+  "env": {
+    "dev": {
+      "plugins": []
+    },
+    "production": {
+      "presets": ["babili"]
+    },
+    "test": {
+      "presets": ["es2015", "stage-0"],
+      "plugins": ["transform-es2015-modules-commonjs"]
+    }
+  }
+}
