@@ -1,10 +1,10 @@
 const path = require('path');
-const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const SRC_FOLDER = path.resolve(__dirname, 'src');
 const TARGET_FOLDER = path.resolve(__dirname, 'dist');
+const PORT = process.env.PORT || 9091;
 
 const config = {
   context: SRC_FOLDER,
@@ -63,4 +63,4 @@ const config = {
   ]
 };
 
-module.exports = { TARGET_FOLDER, SRC_FOLDER, config };
+module.exports = { PORT, TARGET_FOLDER, SRC_FOLDER, config };

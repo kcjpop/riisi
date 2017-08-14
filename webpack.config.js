@@ -1,12 +1,12 @@
 const webpack = require('webpack');
 const merge = require('webpack-merge');
-const { TARGET_FOLDER, config } = require('./webpack.config.base.js');
+const { TARGET_FOLDER, PORT, config } = require('./webpack.config.base.js');
 
 module.exports = merge(config, {
   entry: {
     // bundle the client for webpack-dev-server
     // and connect to the provided endpoint
-    dev: 'webpack-dev-server/client?http://localhost:8080',
+    dev: `webpack-dev-server/client?http://localhost:${PORT}`,
 
     // bundle the client for hot reloading
     // only- means to only hot reload for successful updates
@@ -18,6 +18,7 @@ module.exports = merge(config, {
   },
   devtool: 'inline-source-map',
   devServer: {
+    port: PORT,
     historyApiFallback: true,
     // enable HMR on the server
     hot: true,
